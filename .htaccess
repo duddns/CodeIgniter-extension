@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteRule ^(profiler)/.*$ public/$0
+RewriteRule ^public/.*$ - [L]
+
+# default
+RewriteCond $1 !^(index\.php|robots\.txt|favicon\.ico|notice\.html)
+RewriteRule ^(.*)$ /index.php/$1 [L]
